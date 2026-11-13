@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050713">
+<meta name="description" content="2B2R Minecraft Network - Survival and Parkour">
+<title>2B2R | Cosmic Network</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="space-background">
+ <div class="stars stars-one"></div>
+ <div class="stars stars-two"></div>
+ <div class="stars stars-three"></div>
+ <div class="nebula nebula-one"></div>
+ <div class="nebula nebula-two"></div>
+ <div class="planet"></div>
+ <div class="planet-ring"></div>
+</div>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav class="navbar">
+ <a class="logo" href="#home">
+  <span class="logo-symbol">✦</span>
+  <span>2B2R</span>
+  <small>NETWORK</small>
+ </a>
+
+ <button class="mobile-menu" id="menuButton" aria-label="باز کردن منو">☰</button>
+
+ <div class="nav-links" id="navLinks">
+  <a href="#home">خانه</a>
+  <a href="#server">وضعیت سرور</a>
+  <a href="#features">امکانات</a>
+  <a href="#tutorial">آموزش ورود</a>
+  <a href="#commands">دستورات</a>
+  <a href="#music">موزیک</a>
+  <a href="#teams">تیمز</a>
+  <details class="nav-more">
+   <summary>بیشتر⌄</summary>
+   <div class="nav-more-menu">
+    <a href="#survival">دنیای Survival</a>
+    <a href="#parkour">چالش Parkour</a>
+    <a href="#players">بازیکنان آنلاین</a>
+    <a href="#rules">قوانین شبکه</a>
+    <a href="#about">درباره 2B2R</a>
+    <a href="#support">پشتیبانی و ارتباط</a>
+   </div>
+  </details>
+ </div>
+
+ <a href="#server" class="nav-join">ورود به شبکه ↗</a>
+</nav>
+
+<main>
+
+<header class="hero" id="home">
+
+ <div class="hero-orbit orbit-one"></div>
+ <div class="hero-orbit orbit-two"></div>
+
+ <div class="hero-content">
+  <div class="top-badge">
+   <span class="pulse-dot"></span>
+   NEXT GENERATION MINECRAFT NETWORK
+  </div>
+
+  <div class="hero-emblem">✦</div>
+
+  <h1 class="hero-title">
+   2B<span>2</span>R
+  </h1>
+
+  <div class="hero-subtitle">
+   BEYOND THE BLOCKS
+  </div>
+
+  <p class="hero-description">
+   به جهان متفاوت 2B2R خوش آمدی.
+   <br>
+   از بقا تا پارکور، ماجراجویی تو از اینجا آغاز می‌شود.
+  </p>
+
+  <div class="hero-actions">
+   <button class="main-button" id="heroCopy">
+    <span>⌘</span>
+    کپی IP و پخش آهنگ
+   </button>
+
+   <a class="secondary-button" href="#tutorial">
+    آموزش ورود
+    <span>↙</span>
+   </a>
+  </div>
+
+  <div class="hero-coordinates">
+   <span>NETWORK: 2B2R</span>
+   <span>•</span>
+   <span>STATUS: ONLINE CHECK</span>
+  </div>
+ </div>
+
+ <div class="floating-label label-one">SURVIVAL WORLD</div>
+ <div class="floating-label label-two">PARKOUR ZONE</div>
+ <div class="floating-label label-three">WELCOME PLAYER</div>
+
+ <a href="#server" class="scroll-indicator">
+  <span>SCROLL TO EXPLORE</span>
+  <i></i>
+ </a>
+</header>
+
+<section class="section" id="server">
+
+ <div class="section-heading">
+  <span class="section-kicker">01 / NETWORK STATUS</span>
+  <h2>مرکز کنترل <span class="gradient-text">شبکه</span></h2>
+  <p>وضعیت اتصال و اطلاعات بازیکنان 2B2R</p>
+ </div>
+
+ <div class="server-panel">
+
+  <div class="panel-top">
+   <div>
+    <span class="small-label">MAIN NETWORK</span>
+    <h3>2B2R SERVER</h3>
+   </div>
+
+   <div class="status">
+    <span class="pulse-dot" id="statusDot"></span>
+    <span id="serverStatus">در حال بررسی...</span>
+   </div>
+  </div>
+
+  <div class="ip-container">
+   <span class="small-label">SERVER IP ADDRESS</span>
+
+   <div class="ip-text" id="serverIP">
+    weakness-warriors.tun.ply.gg
+   </div>
+
+   <button class="copy-ip" id="copyServer">
+    COPY ADDRESS ⧉
+   </button>
+  </div>
+
+  <div class="stats-grid">
+   <div class="stat">
+    <div class="stat-icon">👥</div>
+    <strong id="online">--</strong>
+    <span>بازیکنان آنلاین</span>
+   </div>
+
+   <div class="stat">
+    <div class="stat-icon">🎮</div>
+    <strong id="maximum">--</strong>
+    <span>ظرفیت سرور</span>
+   </div>
+
+   <div class="stat">
+    <div class="stat-icon">⚙</div>
+    <strong id="version">--</strong>
+    <span>نسخه بازی</span>
+   </div>
+  </div>
+
+  <div class="players-container" id="players">
+   <div class="players-title">
+    <h4>بازیکنان آنلاین</h4>
+    <button id="refreshButton">⟳ بروزرسانی</button>
+   </div>
+
+   <div class="player-list" id="playerList">
+    در حال دریافت اطلاعات...
+   </div>
+  </div>
+
+  <p class="server-disclaimer">
+   اطلاعات بازیکنان از سرویس وضعیت Minecraft دریافت می‌شود.
+  </p>
+
+ </div>
+</section>
+
+<section class="section" id="features">
+
+ <div class="section-heading">
+  <span class="section-kicker">02 / EXPLORE</span>
+  <h2>جهان <span class="gradient-text">2B2R</span></h2>
+  <p>چه چیزی در انتظار توست؟</p>
+ </div>
+
+ <div class="feature-grid">
+
+  <article class="feature-card card-blue" id="survival">
+   <div class="feature-index">01</div>
+   <div class="feature-icon">🌌</div>
+   <h3>SURVIVAL</h3>
+   <p>جهانی برای بقا، ساخت‌وساز، اکتشاف و ماجراجویی.</p>
+   <span>EXPLORE THE WORLD</span>
+  </article>
+
+  <article class="feature-card card-purple" id="parkour">
+   <div class="feature-index">02</div>
+   <div class="feature-icon">🏃</div>
+   <h3>PARKOUR</h3>
+   <p>از مسیرهای چالش‌برانگیز عبور کن و مهارتت را امتحان کن.</p>
+   <span>TEST YOUR SKILLS</span>
+  </article>
+
+  <article class="feature-card card-pink">
+   <div class="feature-index">03</div>
+   <div class="feature-icon">🎙️</div>
+   <h3>VOICE ROOM</h3>
+   <p>با اعضای شبکه در اتاق گفت‌وگوی Microsoft Teams همراه شو.</p>
+   <span>JOIN THE COMMUNITY</span>
+  </article>
+
+  <article class="feature-card card-orange">
+   <div class="feature-index">04</div>
+   <div class="feature-icon">⚡</div>
+   <h3>FREEDOM</h3>
+   <p>با امکانات و قوانین سرور، سبک بازی خودت را بساز.</p>
+   <span>PLAY YOUR WAY</span>
+  </article>
+
+ </div>
+</section>
+
+<section class="section" id="tutorial">
+
+ <div class="section-heading">
+  <span class="section-kicker">03 / PLAYER GUIDE</span>
+  <h2>آموزش <span class="gradient-text">ورود به سرور</span></h2>
+  <p>تمام مراحل اتصال به شبکه 2B2R</p>
+ </div>
+
+ <div class="tutorial-list">
+
+  <article class="tutorial">
+   <div class="tutorial-number">01</div>
+   <div>
+    <h3>دانلود Minecraft Launcher</h3>
+    <p>لانچر رسمی Minecraft را نصب کن.</p>
+    <a href="https://www.minecraft.net/download" target="_blank" rel="noopener">دانلود از سایت رسمی ↗</a>
+   </div>
+  </article>
+
+  <article class="tutorial">
+   <div class="tutorial-number">02</div>
+   <div>
+    <h3>اجرای نسخه Java Edition</h3>
+    <p>بازی را اجرا کن و نسخه سازگار با سرور را انتخاب کن. نسخه دقیق را از مدیر سرور بپرس.</p>
+   </div>
+  </article>
+
+  <article class="tutorial">
+   <div class="tutorial-number">03</div>
+   <div>
+    <h3>رفتن به Multiplayer</h3>
+    <p>از منوی اصلی بازی گزینه Multiplayer را انتخاب کن.</p>
+   </div>
+  </article>
+
+  <article class="tutorial">
+   <div class="tutorial-number">04</div>
+   <div>
+    <h3>افزودن سرور</h3>
+    <p>روی Add Server کلیک کن و آدرس زیر را در قسمت Server Address قرار بده.</p>
+
+    <div class="code-box">
+     <code>weakness-warriors.tun.ply.gg</code>
+     <button class="copy-small" data-copy="weakness-warriors.tun.ply.gg">کپی</button>
+    </div>
+   </div>
+  </article>
+
+  <article class="tutorial">
+   <div class="tutorial-number">05</div>
+   <div>
+    <h3>ورود به شبکه</h3>
+    <p>روی Done و سپس Join Server بزن و منتظر ورود به لابی بمان.</p>
+   </div>
+  </article>
+
+  <article class="tutorial">
+   <div class="tutorial-number">06</div>
+   <div>
+    <h3>انتخاب بخش بازی</h3>
+    <p>روی NPC مربوط به Survival یا Parkour کلیک کن یا دستور زیر را امتحان کن.</p>
+
+    <div class="code-box">
+     <code>/server</code>
+     <button class="copy-small" data-copy="/server">کپی</button>
+    </div>
+   </div>
+  </article>
+
+  <article class="tutorial">
+   <div class="tutorial-number">07</div>
+   <div>
+    <h3>شروع ماجراجویی</h3>
+    <p>حالا آماده‌ای! وارد بخش دلخواه شو و از بازی لذت ببر.</p>
+   </div>
+  </article>
+
+ </div>
+</section>
+
+<section class="section">
+
+ <div class="section-heading">
+  <span class="section-kicker">04 / COMMAND CENTER</span>
+  <h2>دستورات <span class="gradient-text">کاربردی</span></h2>
+ </div>
+
+ <div class="command-grid">
+  <div class="command-card">
+   <code>/server</code>
+   <p>انتخاب سرورهای شبکه</p>
+  </div>
+
+  <div class="command-card">
+   <code>/spawn</code>
+   <p>بازگشت به اسپاون، در صورت فعال بودن</p>
+  </div>
+
+  <div class="command-card">
+   <code>NPC CLICK</code>
+   <p>ورود به بخش‌های مختلف</p>
+  </div>
+
+  <div class="command-card">
+   <code>MULTIPLAYER</code>
+   <p>اتصال به شبکه Minecraft</p>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="teams">
+
+ <div class="section-heading">
+  <span class="section-kicker">05 / COMMUNITY</span>
+  <h2>ارتباط با <span class="gradient-text">2B2R</span></h2>
+  <p>برای شرکت در کال سرور از Microsoft Teams استفاده کن.</p>
+ </div>
+
+ <div class="teams-banner">
+  <div class="teams-logo">✉</div>
+  <span class="small-label">OFFICIAL VOICE ROOM</span>
+  <h3>2B2R VOICE CHANNEL</h3>
+  <p>به اتاق گفت‌وگوی اختصاصی سرور بپیوند.</p>
+
+  <a class="teams-button"
+   href="https://teams.live.com/meet/9378594436255?p=K6wYWCofpJEtg287DA"
+   target="_blank" rel="noopener">
+   ورود مستقیم به کال ↗
+  </a>
+ </div>
+
+ <div class="download-grid">
+
+  <a class="download-card" href="https://teams.live.com/" target="_blank" rel="noopener">
+   <span>🌐</span>
+   <h3>Teams Web</h3>
+   <p>نسخه تحت وب</p>
+   <b>ورود ↗</b>
+  </a>
+
+  <a class="download-card" href="https://myket.ir/search?q=Microsoft%20Teams" target="_blank" rel="noopener">
+   <span>📱</span>
+   <h3>Android</h3>
+   <p>جست‌وجوی Teams در مایکت</p>
+   <b>مشاهده ↗</b>
+  </a>
+
+  <a class="download-card" href="https://apps.microsoft.com/search?query=Microsoft%20Teams" target="_blank" rel="noopener">
+   <span>🖥️</span>
+   <h3>Windows</h3>
+   <p>Microsoft Store</p>
+   <b>مشاهده ↗</b>
+  </a>
+
+ </div>
+</section>
+
+<section class="section extra-info-section" id="rules">
+ <div class="section-heading">
+  <span class="section-kicker">06 / NETWORK RULES</span>
+  <h2>قوانین <span class="gradient-text">شبکه</span></h2>
+  <p>برای داشتن تجربه‌ای بهتر، به قوانین اعلام‌شده توسط مدیریت سرور احترام بگذار.</p>
+ </div>
+ <div class="extra-info-grid">
+  <article class="extra-info-card"><span>🤝</span><h3>احترام به بازیکنان</h3><p>با دیگر اعضا محترمانه رفتار کن و از ایجاد مزاحمت خودداری کن.</p></article>
+  <article class="extra-info-card"><span>🛡️</span><h3>بازی منصفانه</h3><p>از تقلب، سوءاستفاده از باگ‌ها و ابزارهای غیرمجاز استفاده نکن.</p></article>
+  <article class="extra-info-card"><span>💬</span><h3>چت سالم</h3><p>از اسپم، تبلیغات ناخواسته و پیام‌های توهین‌آمیز خودداری کن.</p></article>
+  <article class="extra-info-card"><span>📢</span><h3>دستور مدیریت</h3><p>اطلاعیه‌ها و قوانین تکمیلی اعلام‌شده توسط مدیریت را دنبال کن.</p></article>
+ </div>
+ <p class="extra-info-note">قوانین دقیق و مجازات‌ها را از مدیریت 2B2R دریافت کن؛ این بخش خلاصه‌ای از اصول عمومی جامعه است.</p>
+</section>
+
+<section class="section extra-info-section" id="about">
+ <div class="section-heading">
+  <span class="section-kicker">07 / ABOUT THE NETWORK</span>
+  <h2>درباره <span class="gradient-text">2B2R</span></h2>
+  <p>یک شبکه Minecraft برای تجربه Survival و Parkour در کنار جامعه بازیکنان.</p>
+ </div>
+ <div class="about-panel">
+  <div class="about-symbol">✦</div>
+  <h3>BEYOND THE BLOCKS</h3>
+  <p>در 2B2R می‌توانی وارد دنیای بقا شوی، مسیرهای پارکور را تجربه کنی و برای هماهنگی و گفت‌وگو به اتاق Microsoft Teams بپیوندی.</p>
+  <div class="about-meta"><span>NETWORK: 2B2R</span><span>GAME MODES: SURVIVAL + PARKOUR</span><span>CREATOR: BENYAMIN BEROST</span></div>
+ </div>
+</section>
+
+<section class="section extra-info-section" id="support">
+ <div class="section-heading">
+  <span class="section-kicker">08 / SUPPORT CENTER</span>
+  <h2>پشتیبانی و <span class="gradient-text">ارتباط</span></h2>
+  <p>برای هماهنگی و پرسیدن سؤال‌ها از راه‌های ارتباطی موجود استفاده کن.</p>
+ </div>
+ <div class="support-grid">
+  <a class="support-card" href="https://teams.live.com/meet/9378594436255?p=K6wYWCofpJEtg287DA" target="_blank" rel="noopener"><span>🎙️</span><h3>اتاق گفت‌وگوی Teams</h3><p>ورود به کال شبکه</p><b>پیوستن ↗</b></a>
+  <a class="support-card" href="#server"><span>🖥️</span><h3>وضعیت سرور</h3><p>بررسی آنلاین بودن و بازیکنان</p><b>مشاهده وضعیت ↗</b></a>
+  <a class="support-card" href="#tutorial"><span>📘</span><h3>راهنمای اتصال</h3><p>آموزش قدم‌به‌قدم ورود به Minecraft</p><b>دیدن آموزش ↗</b></a>
+ </div>
+</section>
+
+<section class="section music-section" id="music">
+
+ <div class="music-card">
+
+  <div class="vinyl">
+   <div class="vinyl-center">2B2R</div>
+  </div>
+
+  <div class="music-details">
+   <span class="section-kicker">OFFICIAL SOUNDTRACK</span>
+   <h2>2B2R <span class="gradient-text">FUNK</span></h2>
+   <p>SERVER DESTRUCTION</p>
+
+   <div class="audio-controls">
+    <button id="musicButton" class="play-button">▶</button>
+    <span id="musicStatus">آماده پخش</span>
+   </div>
+
+   <div class="progress-container">
+    <span id="currentTime">0:00</span>
+    <input type="range" id="progress" min="0" max="100" value="0">
+    <span id="duration">0:00</span>
+   </div>
+
+   <audio id="musicPlayer" preload="auto" playsinline>
+    
+    <source src="2/2b2rfunk.mp3" type="audio/mpeg">
+   </audio>
+  </div>
+
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <div class="footer-logo">✦ 2B2R NETWORK</div>
+ <p>BEYOND THE BLOCKS • SURVIVAL • PARKOUR</p>
+ <p>Created by <strong>Benyamin Berost</strong></p>
+ <p>© 2026 2B2R NETWORK</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+const SERVER_IP = "weakness-warriors.tun.ply.gg";
+const API_URL = "https://api.mcsrvstat.us/3/" + encodeURIComponent(SERVER_IP);
+
+const $ = id => document.getElementById(id);
+const music = $("musicPlayer");
+
+let toastTimer;
+
+function notify(message) {
+ const toast = $("toast");
+ toast.textContent = message;
+ toast.classList.add("show");
+
+ clearTimeout(toastTimer);
+ toastTimer = setTimeout(() => {
+  toast.classList.remove("show");
+ }, 2500);
+}
+
+async function copyText(value) {
+ try {
+  if (navigator.clipboard && window.isSecureContext) {
+   await navigator.clipboard.writeText(value);
+  } else {
+   const input = document.createElement("textarea");
+   input.value = value;
+   input.style.position = "fixed";
+   input.style.opacity = "0";
+   document.body.appendChild(input);
+   input.select();
+
+   const success = document.execCommand("copy");
+   input.remove();
+
+   if (!success) throw new Error("Copy failed");
+  }
+
+  notify("با موفقیت کپی شد!");
+ } catch (error) {
+  notify("کپی انجام نشد؛ آدرس را دستی انتخاب کن.");
+ }
+}
+
+async function copyIP() {
+ // پخش باید مستقیماً در رویداد کلیک آغاز شود.
+ let musicStart = Promise.resolve();
+
+ if (music.paused) {
+  try {
+   musicStart = music.play();
+  } catch (error) {
+   musicStart = Promise.reject(error);
+  }
+ }
+
+ copyText(SERVER_IP);
+
+ try {
+  await musicStart;
+ } catch (error) {
+  notify("IP کپی شد؛ مسیر و نام فایل آهنگ را بررسی کن.");
+ }
+}
+
+$("heroCopy").addEventListener("click", copyIP);
+$("copyServer").addEventListener("click", copyIP);
+
+document.querySelectorAll("[data-copy]").forEach(button => {
+ button.addEventListener("click", () => {
+  copyText(button.dataset.copy);
+ });
+});
+
+function escapeHTML(value) {
+ const element = document.createElement("span");
+ element.textContent = String(value);
+ return element.innerHTML;
+}
+
+function setOffline(message) {
+ $("serverStatus").textContent = message;
+ $("statusDot").classList.add("offline");
+ $("online").textContent = "--";
+ $("maximum").textContent = "--";
+ $("version").textContent = "--";
+ $("playerList").textContent = "اطلاعات بازیکنان در دسترس نیست.";
+}
+
+async function refreshServer() {
+ $("serverStatus").textContent = "در حال بررسی...";
+ $("statusDot").classList.remove("offline");
+
+ try {
+  const response = await fetch(API_URL, {cache:"no-store"});
+
+  if (!response.ok) {
+   throw new Error("API unavailable");
+  }
+
+  const data = await response.json();
+
+  if (!data.online) {
+   setOffline("سرور آفلاین یا غیرقابل دسترسی");
+   return;
+  }
+
+  $("serverStatus").textContent = "سرور آنلاین است";
+  $("online").textContent = data.players?.online ?? 0;
+  $("maximum").textContent = data.players?.max ?? "--";
+  $("version").textContent = data.version || "--";
+
+  const players = data.players?.list || [];
+  const list = $("playerList");
+
+  list.replaceChildren();
+
+  if (!players.length) {
+   list.textContent = "در حال حاضر نام بازیکنی برای نمایش ارائه نشده است.";
+  } else {
+   players.forEach(player => {
+    const entry = document.createElement("div");
+    entry.className = "player-entry";
+
+    const dot = document.createElement("span");
+    dot.className = "player-dot";
+
+    const name = document.createElement("span");
+    name.textContent = player.name || String(player);
+
+    entry.append(dot, name);
+    list.appendChild(entry);
+   });
+  }
+
+ } catch (error) {
+  setOffline("عدم دریافت اطلاعات");
+ }
+}
+
+$("refreshButton").addEventListener("click", refreshServer);
+refreshServer();
+setInterval(refreshServer, 60000);
+
+// Music player
+function formatTime(seconds) {
+ if (!Number.isFinite(seconds)) return "0:00";
+
+ const minutes = Math.floor(seconds / 60);
+ const remaining = Math.floor(seconds % 60);
+
+ return minutes + ":" + String(remaining).padStart(2, "0");
+}
+
+async function toggleMusic() {
+ if (music.paused) {
+  try {
+   await music.play();
+  } catch (error) {
+   notify("فایل آهنگ بارگذاری نشد؛ مسیر و نام فایل را بررسی کن.");
+  }
+ } else {
+  music.pause();
+ }
+}
+
+$("musicButton").addEventListener("click", toggleMusic);
+
+function updateMusic() {
+ const playing = !music.paused;
+
+ $("musicButton").textContent = playing ? "Ⅱ" : "▶";
+ $("musicStatus").textContent = playing ? "در حال پخش" : "متوقف شده";
+
+ document.querySelector(".vinyl").classList.toggle("playing", playing);
+}
+
+music.addEventListener("play", updateMusic);
+music.addEventListener("pause", updateMusic);
+music.addEventListener("ended", updateMusic);
+
+music.addEventListener("error", () => {
+ notify("فایل آهنگ بارگذاری نشد؛ مسیر و نام فایل را بررسی کن.");
+});
+
+music.addEventListener("loadedmetadata", () => {
+ $("duration").textContent = formatTime(music.duration);
+});
+
+music.addEventListener("timeupdate", () => {
+ $("currentTime").textContent = formatTime(music.currentTime);
+
+ if (Number.isFinite(music.duration) && music.duration > 0) {
+  $("progress").value = (music.currentTime / music.duration) * 100;
+ }
+});
+
+$("progress").addEventListener("input", event => {
+ if (Number.isFinite(music.duration) && music.duration > 0) {
+  music.currentTime = (Number(event.target.value) / 100) * music.duration;
+ }
+});
+
+// Mobile menu
+$("menuButton").addEventListener("click", () => {
+ $("navLinks").classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a, .nav-more-menu a").forEach(link => {
+ link.addEventListener("click", () => {
+  $("navLinks").classList.remove("open");
+ });
+});
+
+// Scroll animations
+const revealObserver = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+  if (entry.isIntersecting) {
+   entry.target.classList.add("visible");
+   revealObserver.unobserve(entry.target);
+  }
+ });
+}, {threshold:0.12});
+
+document.querySelectorAll(
+ ".section-heading, .server-panel, .feature-card, .tutorial, .command-card, .teams-banner, .download-card, .music-card"
+).forEach(element => {
+ element.classList.add("reveal");
+ revealObserver.observe(element);
+});
+
+// Mouse glow
+const cursorGlow = $("cursorGlow");
+
+if (window.matchMedia("(pointer:fine)").matches) {
+ document.addEventListener("mousemove", event => {
+  cursorGlow.style.left = event.clientX + "px";
+  cursorGlow.style.top = event.clientY + "px";
+  cursorGlow.classList.add("active");
+ });
+}
+</script>
+
+</body>
+</html>
